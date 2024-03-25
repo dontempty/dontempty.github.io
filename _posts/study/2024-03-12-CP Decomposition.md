@@ -10,6 +10,8 @@ description: >
 
 # CP decompostion
 
+$t=\frac{\overline{X1} - \overline{X2}}{S(\overline{X1} - \overline{X2})}$
+
 ## SVD
 svd는 행렬을 3개의 행렬 $U, \Sigma, V$로 분해하는 작업을 합니다.  
 
