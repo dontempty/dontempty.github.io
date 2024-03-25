@@ -1,3 +1,13 @@
+---
+title: CP Decomposition
+author: dontempty
+date: 2024-03-10 20:30:00 +0900
+categories: [project, Tensor Decomposition]
+tags: [Tensor Decomposition]
+description: >
+    Canonical Tensor Decomposition
+---
+
 # Tensor-decompostion
 
 ## SVD
