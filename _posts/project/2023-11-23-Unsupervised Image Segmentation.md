@@ -1,17 +1,4 @@
 ---
-layout: post
-title: 'Unsupervised Image Segmentation'
-subtitle: Unsupervised Image Segmentation
-date: '2023-11-23 12:45:51 +0900'
-categories:
-    - project
-tags:
-    - image segmentation
-comments: true
-published: true
----
-
----
 title: Unsupervised Image Segmentation
 author: dontempty
 date: 2023-11-23 20:30:00 +0900
