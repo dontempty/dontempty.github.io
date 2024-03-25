@@ -11,7 +11,17 @@ comments: true
 published: true
 ---
 
-# ABSTRACT  
+---
+title: Unsupervised Image Segmentation
+author: dontempty
+date: 2023-11-23 20:30:00 +0900
+categories: [project, image segmentation]
+tags: [image segmentation]
+description: >
+    Unsupervised Image Segmentation
+---
+
+# Unsupervised Image Segmentation  
 Fully unsupervised learng에 대해서 다루고 있습니다. 
 3가지 조건을 만족하도록 학습을 유도합니다.
 1. 비슷한 특징(색이 비슷한)의 픽셀을 같은 label로 예측합니다.
