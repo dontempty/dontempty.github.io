@@ -1,10 +1,4 @@
 <div align="center">
 
-# YYE Blog
+# 강동현의 블로그
 
-
-[융융이 블로그 바로가기](https://yoongyoonge.github.io/)
-
-
-
-포스트 작성 진행중....
