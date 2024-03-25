@@ -18,18 +18,18 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: YYE # the main title
+title: 강동현
 
-tagline: 융융이 지식창고 <br> 검색이나 카테고리 메뉴를 통해 더 쉽게 포스트를 찾을 수 있어요! # it will display as the sub-title
+tagline: 뭐든지 하고 기록합니다.
 
 description: >- # used by seo meta and the atom feed
-  엉금엉금 기어가자
+  뭐든지 한다
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: https://yoongyoonge.github.io
+url: https://dontempty.github.io
 
 github:
-  username: yoongyoonge # change to your github username
+  username: dontempty # change to your github username
 
 #twitter:
 #  username: twitter_username # change to your twitter username
@@ -37,8 +37,8 @@ github:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: yoongyoonge
-  email: namyunjin0912@gmail.com # change to your email address
+  name: dontempty
+  email: gangd8707@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
     #- https://twitter.com/username # change to your twitter homepage
@@ -52,8 +52,8 @@ google_site_verification: cwuoRsfU418y23WsB4M-pd-UABy57DNdg6CHi5HWOos # fill in 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
 
-google_analytics:
-  id: G-PE31BYBKNF # fill in your Google Analytics ID
+#google_analytics:
+#  id: G-PE31BYBKNF # fill in your Google Analytics ID
 
 # Prefer color scheme setting.
 #
@@ -66,7 +66,7 @@ google_analytics:
 #     light  - Use the light color scheme
 #     dark   - Use the dark color scheme
 #
-theme_mode: dark # [light|dark]
+theme_mode: light # [light|dark]
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url
