@@ -1,15 +1,4 @@
 ---
-layout: post
-title: Inverse Problem in SIR model
-subtitle: 파라미터 추정하기
-gh-repo: dontempty/dontempty.github.io
-gh-badge: [star, fork, follow]
-cover-img: /assets/img/path.jpg
-tags: [inverse problem]
-comments: true
----
-
----
 title: Inverse Problem in SIR model
 author: dontempty
 date: 2023-11-10 20:30:00 +0900
