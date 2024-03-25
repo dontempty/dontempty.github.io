@@ -9,6 +9,7 @@ description: >
 ---
 
 # CP decompostion
+<https://github.com/dontempty/CP-decompostion>
 
 $t=\frac{\overline{X1} - \overline{X2}}{S(\overline{X1} - \overline{X2})}$
 
