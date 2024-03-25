@@ -9,6 +9,16 @@ tags: [inverse problem]
 comments: true
 ---
 
+---
+title: Inverse Problem in SIR model
+author: dontempty
+date: 2023-11-10 20:30:00 +0900
+categories: [project, Inverse problem]
+tags: [Inverse problem]
+description: >
+    Inverse Problem in SIR model
+---
+
 # Inverse Problem in SIR moel
 
 SIR model의 $\beta , \gamma$ 계수를 추정하는 작업을 합니다.
