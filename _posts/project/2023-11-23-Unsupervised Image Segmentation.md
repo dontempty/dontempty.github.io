@@ -31,10 +31,10 @@ $f$: 우리 모델
 ## 2.1 Constraint on feature similarity
 
 let  
-$v_n: RGB\ vector\in\ \R^3$  
+$v_n: RGB\ vector\in\ R^3$  
 $I: 각\ 픽셀마다\ v_n을\ 모아놓은 것(그냥\ 이미지\ 배열)$  
 $component: CNN(2D)-ReLU-batch\ norm$  
-$W_c \in \R^{q \times p}$  
+$W_c \in R^{q \times p}$  
 
 M개의 component를 연결한다. 마지막에는 $(y_n = W_cx_n+b_c)$을 적용해서 마지막 label을 얻는다.  
 $W_{c}$에서 결국 각 픽셀마다 q개의 라벨값을 예측하는데 argmax함수를 사용해서 최종적인 라벨을 결정한다.  
@@ -46,13 +46,13 @@ $S_k: k-superpixel$
 $|c_n|: S_n에서\ c_n의 개수$  
 
 1. K(큰 수)개의 superpixel을 뽑는다.  
-2. 모든 픽셀이 superpixel과 같은 cluster label을 가지도록 유도할 것이다. 각 superpxiel 안에 있는 cluster label 중에 가장 많이 등장하는 cluster label로 바꾼다. 위 내용은 SLIC라는 논문의 내용이다. 기본적으로 k-means 알고리즘 기반으로 superpixel을 update한다. 결과적으로 밑에 사진처럼 cluster을 만든다. k-means 에서 거리를 계산하는 것처럼 superpixel은 rgb_distance와 pixel_distance 합한 값을 사용한다.
+2. 모든 픽셀이 superpixel과 같은 cluster label을 가지도록 유도할 것이다. 각 superpxiel 안에 있는 cluster label 중에 가장 많이 등장하는 cluster label로 바꾼다. 위 내용은 SLIC라는 논문의 내용이다. 기본적으로 k-means 알고리즘 기반으로 superpixel을 update한다. 결과적으로 밑에 사진처럼 cluster을 만든다. k-means 에서 거리를 계산하는 것처럼 superpixel은 rgb_distance와 pixel_distance 합한 값을 사용한다.  
 자세한 설명 <https://hydragon-cv.info/entry/Superpixels-슈퍼-픽셀-알고리즘-작성중>
 
 ## 2.3 Constraint on the number of unique cluster label
 
 예측한 cluster label의 개수가 만약 1개인 경우 정확한 예측이 일어날 수 없습니다. 그래서 batch normalization을 활용했습니다.   
-$$y'_{n, i} = \frac{y_{n, i}-\mu_i}{\sqrt{\sigma^2_i} + \epsilon}$$  
+$y'_{n, i} = \frac{y_{n, i}-\mu_i}{\sqrt{\sigma^2_i} + \epsilon}$  
 하지만 이것이 cluster label의 개수의 minimum값이 늘어나는 것을 보장하지 않습니다.  
 ![3](https://github.com/dontempty/dontempty.github.io/assets/155451345/e4e40a80-31cf-441d-9ee5-f167c3cfebc1)
 
@@ -76,7 +76,7 @@ k-means 와 graph-based segmentation method(GS) 2가지 방법을 사용했습�
 k-means의 경우 RGB값을 ($\alpha \times\alpha$) 범위를 가지고 합쳤습니다.  
 GS의 경우 threshold를 $\beta$로 잡아서 진행했습니다.  
 
-$$K(\alpha, k), GS(\beta)$$  
+$K(\alpha, k), GS(\beta)$  
 Fugure 3  
 ![5](https://github.com/dontempty/dontempty.github.io/assets/155451345/ffd5219b-8b48-468a-bf3f-ad0e1ced2b10)
 F-measure = precision, recall의 평균  
@@ -109,9 +109,9 @@ The DEC algorithm iteratively refines clusters by minimizing the KL divergence l
 
 infer = True 라고 지정하면 minlabel값을 계산해서 학습을 진행합니다.  
 
-$$Var = \frac{Var_R+Var_G+Var_B}{3}\\minlabels = (Var//10)+3$$  
+$Var = \frac{Var_R+Var_G+Var_B}{3}\\minlabels = (Var//10)+3$  
 
-$$Var_{R}$$은 R색상의 Variance입니다.  
+$Var_{R}$은 R색상의 Variance입니다.  
 나머지는 각 색상별로의 분산입니다.  
 
 기본적인 아이디어는 색의 분산이 클수록 다양한 색을 가지고 있을 것입니다. 즉 다양한 물체를 포함하고 있다고 생각할 수 있습니다. 그래서 색상의 분산을 이용해서 minlabels를 추론해보기로 했습니다.  
