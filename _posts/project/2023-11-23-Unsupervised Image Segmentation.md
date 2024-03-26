@@ -4,6 +4,7 @@ author: dontempty
 date: 2023-11-23 20:30:00 +0900
 categories: [project, image segmentation]
 tags: [image segmentation]
+use_math: true
 description: >
     Unsupervised Image Segmentation
 ---
