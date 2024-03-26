@@ -22,28 +22,28 @@ CNN을 기반으로 만든 모델입니다.
 전체적인 아이디어는 이미지를  clustering 해서 image segmentation을 진행합니다.
 
 ## Let 
-$$x_{n}$$: p dimention feature (RGB 3차원 벡터)
-$$c_{n}$$: cluster label
-$$f$$: 우리 모델
+$x_{n}$: p dimention feature (RGB 3차원 벡터)
+$c_{n}$: cluster label
+$f$: 우리 모델
 
 # 2. METHOD
 
 ## 2.1 Constraint on feature similarity
 
 let  
-$$v_n: RGB\ vector\in\ \R^3$$  
-$$I: 각\ 픽셀마다\ v_n을\ 모아놓은 것(그냥\ 이미지\ 배열)$$  
-$$component: CNN(2D)-ReLU-batch\ norm $$  
-$$W_c \in \R^{q \times p}$$  
+$v_n: RGB\ vector\in\ \R^3$  
+$I: 각\ 픽셀마다\ v_n을\ 모아놓은 것(그냥\ 이미지\ 배열)$  
+$component: CNN(2D)-ReLU-batch\ norm$  
+$W_c \in \R^{q \times p}$  
 
 M개의 component를 연결한다. 마지막에는 $(y_n = W_cx_n+b_c)$을 적용해서 마지막 label을 얻는다.  
-$$W_{c}$$에서 결국 각 픽셀마다 q개의 라벨값을 예측하는데 argmax함수를 사용해서 최종적인 라벨을 결정한다.  
+$W_{c}$에서 결국 각 픽셀마다 q개의 라벨값을 예측하는데 argmax함수를 사용해서 최종적인 라벨을 결정한다.  
 
 ## 2.2 Constraint on spatial continuity
 
 let
-$$S_k: k-superpixel$$  
-$$|c_n|: S_n에서\ c_n의 개수$$  
+$S_k: k-superpixel$  
+$|c_n|: S_n에서\ c_n의 개수$  
 
 1. K(큰 수)개의 superpixel을 뽑는다.  
 2. 모든 픽셀이 superpixel과 같은 cluster label을 가지도록 유도할 것이다. 각 superpxiel 안에 있는 cluster label 중에 가장 많이 등장하는 cluster label로 바꾼다. 위 내용은 SLIC라는 논문의 내용이다. 기본적으로 k-means 알고리즘 기반으로 superpixel을 update한다. 결과적으로 밑에 사진처럼 cluster을 만든다. k-means 에서 거리를 계산하는 것처럼 superpixel은 rgb_distance와 pixel_distance 합한 값을 사용한다.
