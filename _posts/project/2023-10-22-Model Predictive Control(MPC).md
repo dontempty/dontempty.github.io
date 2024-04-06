@@ -99,12 +99,12 @@ x_a(k+1|k),\ x_a(k+2|k), \ ... \ x_a(k+N_p|k)$
 
 다음 상태를 현재 상태 변수$x_a(k)$를 이용하여 다음과 같이 정리할 수 있습니다.
 
-$\Rightarrow x_a(k+1|k) = A_e x_a(k)_a+B_eu(k) \\
+$$\Rightarrow x_a(k+1|k) = A_e x_a(k)_a+B_eu(k) \\
 \quad \, x_a(k+2|k) = A_e x(k+1|k)_a + B_eu(k+1) \\
 \quad \, A_e^2 x_a(k) + A_e B_e\Delta{u(k)} + B_e \Delta{u}(k+1)\\
 \quad \ .\\
 \quad \ . \\
-\quad x_a(k+N_p|k) = A_e^{N_p}x_a(k)+A_e^{N_p-1}B_e\Delta{u(k)} + ... + A_e^{N_p-N_c}B_e\Delta{u(k+N_c-1)}$
+\quad x_a(k+N_p|k) = A_e^{N_p}x_a(k)+A_e^{N_p-1}B_e\Delta{u(k)} + ... + A_e^{N_p-N_c}B_e\Delta{u(k+N_c-1)}$$
 
 출력 변수 $y(k)$에 대해서도 미래 시점의 관측 값을 다음과 같이 정리할 수 있습니다.
 
