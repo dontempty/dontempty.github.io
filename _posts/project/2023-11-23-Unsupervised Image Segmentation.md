@@ -54,7 +54,8 @@ $|c_n|: S_n에서\ c_n의 개수$
 예측한 cluster label의 개수가 만약 1개인 경우 정확한 예측이 일어날 수 없습니다. 그래서 batch normalization을 활용했습니다.   
 $y'_{n, i} = \frac{y_{n, i}-\mu_i}{\sqrt{\sigma^2_i} + \epsilon}$  
 하지만 이것이 cluster label의 개수의 minimum값이 늘어나는 것을 보장하지 않습니다.  
-![3](https://github.com/dontempty/dontempty.github.io/assets/155451345/e4e40a80-31cf-441d-9ee5-f167c3cfebc1)
+![Uploading 3.png…]()
+
 
 ## 2.4 Learning network by backpropagation
 
@@ -67,7 +68,7 @@ $y'_{n, i} = \frac{y_{n, i}-\mu_i}{\sqrt{\sigma^2_i} + \epsilon}$
 2번의 경우 gradient descent를 사용합니다.  
 논문에서는  momentum을 활용한 stochastic gradient descent를 사용합니다.  
 Figure 1  
-![4](https://github.com/dontempty/dontempty.github.io/assets/155451345/46a5da5a-fee9-4446-b405-235aabb0433a)
+![4](https://github.com/dontempty/dontempty.github.io/assets/155451345/7715c15a-0460-4d5c-b571-f9f66487fcd9)  
 
 # 3. RESULTS
 
@@ -78,17 +79,17 @@ GS의 경우 threshold를 $\beta$로 잡아서 진행했습니다.
 
 $K(\alpha, k), GS(\beta)$  
 Fugure 3  
-![5](https://github.com/dontempty/dontempty.github.io/assets/155451345/ffd5219b-8b48-468a-bf3f-ad0e1ced2b10)
+![5](https://github.com/dontempty/dontempty.github.io/assets/155451345/4575100c-83b3-4354-b77c-fe44d38ecfa6)  
 F-measure = precision, recall의 평균  
 
 learning rate 0.1, momentum 0.9 는 경험적으로 얻은 최적의 하이퍼파라미터입니다.  
 
 Figure 2  
-![6](https://github.com/dontempty/dontempty.github.io/assets/155451345/fade27f5-85ff-4d87-93fa-4e1f4d15df1c)
+![6](https://github.com/dontempty/dontempty.github.io/assets/155451345/d53ae698-e377-4c05-b1f4-4abff72868bb)  
 논문에서 제시하는 예시입니다.  
 
 Figure 4  
-![7](https://github.com/dontempty/dontempty.github.io/assets/155451345/7d757fd0-7a82-448c-b55d-67e33fa4ebd1)
+![7](https://github.com/dontempty/dontempty.github.io/assets/155451345/6a5c48d4-ec18-4c6c-85d7-d1e73d6d7286)  
 각각의 방법들의 그래프입니다.  
 ### 솔직히 여기서 이 사람들이 어떻게 IOU를 계산 했는지 모르겠습니다. 모델은 object를 segment만 하고 classification을 못하는 것 같은데 어떻게 계산했는지 모르겠습니다.  
 
