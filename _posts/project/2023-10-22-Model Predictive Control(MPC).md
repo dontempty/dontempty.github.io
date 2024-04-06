@@ -185,12 +185,11 @@ $\frac{\partial{J}}{\partial{\Delta{U}}} =
 
 최적의 $\Delta{U}$는 미분값이 0이 되는 지점이므로 다음과 같이 쓸 수 있다.
 
-$\frac{\partial{J}}{\partial{\Delta{U}}} = -(R_s-Fx_a-\Phi\Delta{U})^TQ\Phi+\Delta{U}^T\bar{R}=0\\$
+$\frac{\partial{J}}{\partial{\Delta{U}}} = -(R_s-Fx_a-\Phi\Delta{U})^TQ\Phi+\Delta{U}^T\bar{R}=0$
 
 $\Delta{U}^* = (\bar{R}+\Phi^TQ\Phi)^{-1}\Phi^TQ(R_s-Fx_a)$
 
-$\frac{\partial^2{J}}{\partial{\Delta{U}^2}} = 
-R+\Phi^TQ\Phi>0$ 이므로 convex임을 알 수 있다. 
+$\frac{\partial^2{J}}{\partial{\Delta{U}^2}} = R+\Phi^TQ\Phi>0$ 이므로 convex임을 알 수 있다. 
 즉 위의 $\Delta{U}$가 최적의 값이다.
 
 우리가 원하는 값은 현재사용할 $\Delta u$이기 때문에 제일 앞의 값만 사용한다.
@@ -216,12 +215,11 @@ $\frac{\partial{J_c}}{\partial{\Delta{U}}} =
 
 $\frac{\partial{(J_c+J)}}{\partial{\Delta{U}}} = 
 -(R_s-Fx_a-\Phi\Delta{U})^TQ\Phi+\Delta{U}^T\bar{R} \\
-\quad \quad \quad \quad -(L-Fx_a-\Phi\Delta{U})^T\Omega\Phi + (Fx_a+\Phi\Delta{U}-U)^T\Omega\Phi$
+-(L-Fx_a-\Phi\Delta{U})^T\Omega\Phi + (Fx_a+\Phi\Delta{U}-U)^T\Omega\Phi$
 
 ![KakaoTalk_20231114_190745967.jpg](Model%20Predictive%20Control(MPC)%203cbc523c33994289b3f872c4c46c67c3/KakaoTalk_20231114_190745967.jpg)
 
-$\Delta{U}^* = (\Phi^TQ\Phi+2\Phi^T\Omega\Phi)^{-1}((R_s-Fx_a)^TQ\Phi+(L-Fx_a)^T\Omega\Phi \\
-\quad \quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\;\;+(U-Fx_a)^T\Omega\Phi)$
+$\Delta{U}^* = (\Phi^TQ\Phi+2\Phi^T\Omega\Phi)^{-1}((R_s-Fx_a)^TQ\Phi+(L-Fx_a)^T\Omega\Phi +(U-Fx_a)^T\Omega\Phi)$
 
 # 6. 적용
 
