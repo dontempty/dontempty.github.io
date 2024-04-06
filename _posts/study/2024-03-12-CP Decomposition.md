@@ -4,9 +4,9 @@ author: dontempty
 date: 2024-03-12 20:30:00 +0900
 categories: [study, Tensor Decomposition]
 tags: [CP Decompostion]
+use_math: true
 description: >
     Canonical Tensor Decomposition
-use_math: true
 ---
 
 # CP decompostion
