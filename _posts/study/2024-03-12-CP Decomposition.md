@@ -6,6 +6,7 @@ categories: [study, Tensor Decomposition]
 tags: [CP Decompostion]
 description: >
     Canonical Tensor Decomposition
+use_math: true
 ---
 
 # CP decompostion
