@@ -109,7 +109,8 @@ The DEC algorithm iteratively refines clusters by minimizing the KL divergence l
 
 infer = True 라고 지정하면 minlabel값을 계산해서 학습을 진행합니다.  
 
-$Var = \frac{Var_R+Var_G+Var_B}{3}\\minlabels = (Var//10)+3$  
+$Var = \frac{Var_R+Var_G+Var_B}{3}$  
+$minlabels = (Var//10)+3$  
 
 $Var_{R}$은 R색상의 Variance입니다.  
 나머지는 각 색상별로의 분산입니다.  
