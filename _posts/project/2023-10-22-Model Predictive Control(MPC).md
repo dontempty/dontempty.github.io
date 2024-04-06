@@ -1,9 +1,9 @@
 ---
-title: Inverse Problem in SIR model
+title: MPC
 author: dontempty
 date: 2023-11-10 20:30:00 +0900
-categories: [project, Inverse problem]
-tags: [Inverse problem]
+categories: [project, MPC]
+tags: [mpc]
 use_math: true
 description: >
     Inverse Problem in SIR model
