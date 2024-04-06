@@ -114,7 +114,7 @@ $$
 
 $y(k) = C_ex(k)$
 
-$y(k+N_p|k) = C_e A_e^{N_p} x_a(k) + C_e A_e^{N_{p-1}} B_e \Delta{u}(k) + \ ...\ C_e A_e^{N_{p} - N_{c}} B_e \Delta{u}(k+N_c-1)$
+$y(k+N_p|k) = C_e A_e^{N_p}x_a(k) + C_e A_e^{N_p-1}B_e\Delta{u(k)} + ... + C_e A_e^{N_p-N_c}B_e\Delta{u(k+N_c-1)}$
 
 $$Y = \begin{bmatrix}
 y(k+1|k)\\
