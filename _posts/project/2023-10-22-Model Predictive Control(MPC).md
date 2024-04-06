@@ -125,20 +125,19 @@ y(K+N_p|k)
 \Delta{u(k+N_c-1)}
 \end{bmatrix}$ 
 
-$F = \begin{bmatrix}
+$$F = \begin{bmatrix}
   C_eA_e \\
   C_eA_e^2 \\
   .. \\
   C_eA^{N_p}
-\end{bmatrix}
-\quad
+\end{bmatrix} \quad
 \Phi = 
 \begin{bmatrix}
 C_eB_e & 0 & ... &0\\
 C_eA_eB_e & C_eB_e& ... & 0\\
 \vdots & \ddots \\
 C_eA_e^{N_p-1}B_e & ... & & C_eA_e^{N_p-N_c}B_e
-\end{bmatrix}$
+\end{bmatrix}$$
 
 $Y = Fx_a(k) + \Phi \Delta{U}$
 
