@@ -69,9 +69,9 @@ $\Rightarrow y(k+1) = y(k)+C_dA_d\Delta x(k) + C_dB_d\Delta u(k)$
 
 $x_a(k) = \begin{bmatrix} \Delta{x(k)} \\ y(k) \end{bmatrix}$
 
-$\begin{bmatrix} \Delta{x(k+1)} \\ y(k+1) \end{bmatrix} = \begin{bmatrix} \ A_d \quad \ 0 \\ C_dA_d \ 1 \end{bmatrix} \begin{bmatrix} \ \Delta{x(k)} \\ y(k)\end{bmatrix}+\begin{bmatrix} B_d \\ C_dB_d\end{bmatrix} \Delta{u(k)}$
+$$\begin{bmatrix} \Delta{x(k+1)} \\ y(k+1) \end{bmatrix} = \begin{bmatrix} \ A_d \quad \ 0 \\ C_dA_d \ 1 \end{bmatrix} \begin{bmatrix} \ \Delta{x(k)} \\ y(k)\end{bmatrix}+\begin{bmatrix} B_d \\ C_dB_d\end{bmatrix} \Delta{u(k)}$$
 
-$y(k) = \begin{bmatrix} 0 \quad I \end{bmatrix} \begin{bmatrix} \Delta{x(k+1)} \\ y(k) \end{bmatrix}$
+$$y(k) = \begin{bmatrix} 0 \quad I \end{bmatrix} \begin{bmatrix} \Delta{x(k+1)} \\ y(k) \end{bmatrix}$$
 
 상태 변수$\Delta x$와 관측 변수$y$를 같은 벡터에 넣어서 동시에 설명하고 있다.
 
@@ -89,13 +89,13 @@ $(N_c < N_p)$
 
 미래에 행하게 될 제어값을 다음과 정리합니다.
 
-$Future\ control\ trajectroy\\
-\Delta{u(k)},\ \Delta{u(k+1)}\ ... \ \Delta{u(k+N_p-1)}$
+$Future\ control\ trajectroy$  
+$\Delta{u(k)},\ \Delta{u(k+1)}\ ... \ \Delta{u(k+N_p-1)}$
 
 미래의 상태 변수를 다음과 같이 정리합니다.
 
-$Future\ state\ variable\\
-x_a(k+1|k),\ x_a(k+2|k), \ ... \ x_a(k+N_p|k)$
+$Future\ state\ variable$  
+$x_a(k+1|k),\ x_a(k+2|k), \ ... \ x_a(k+N_p|k)$
 
 다음 상태를 현재 상태 변수$x_a(k)$를 이용하여 다음과 같이 정리할 수 있습니다.
 
@@ -110,7 +110,7 @@ $$\Rightarrow x_a(k+1|k) = A_e x_a(k)_a+B_eu(k) \\
 
 $y(k) = C_ex(k)$
 
-$y(k+N_{p}|k) = C_e A_e^{N_p} x_a(k) + C_e A_e^{N_{p-1}} B_e \Delta{u}(k)+\ ...\ C_e A_e^{N_{p}-N_{c}} B_e \Delta{u}(k+N_c-1)$
+$y(k+N_p|k) = C_e A_e^{N_p} x_a(k) + C_e A_e^{N_{p-1}} B_e \Delta{u}(k)+\ ...\ C_e A_e^{N_{p}-N_{c}} B_e  \Delta{u}(k+N_c-1)$
 
 $$Y = \begin{bmatrix}
 y(k+1|k)\\
