@@ -101,12 +101,12 @@ $x_a(k+1|k),\ x_a(k+2|k), \ ... \ x_a(k+N_p|k)$
 
 $$
 \begin{aligned}
-\Rightarrow & x_a(k+1|k) = A_e x_a(k)_a+B_eu(k) \\
-            & x_a(k+2|k) = A_e x(k+1|k)_a + B_eu(k+1) \\
-& \quad \, A_e^2 x_a(k) + A_e B_e\Delta{u(k)} + B_e \Delta{u}(k+1)\\
-& \quad \ .\\
-& \quad \ . \\
-& \quad x_a(k+N_p|k) = A_e^{N_p}x_a(k)+A_e^{N_p-1}B_e\Delta{u(k)} + ... + A_e^{N_p-N_c}B_e\Delta{u(k+N_c-1)}
+\Rightarrow & x_a(k+1|k) = & A_e x_a(k)_a+B_eu(k) \\
+            & x_a(k+2|k) = & A_e x(k+1|k)_a + B_eu(k+1) \\
+& & A_e^2 x_a(k) + A_e B_e\Delta{u(k)} + B_e \Delta{u}(k+1)\\
+& & .\\
+& & . \\
+& & x_a(k+N_p|k) = A_e^{N_p}x_a(k)+A_e^{N_p-1}B_e\Delta{u(k)} + ... + A_e^{N_p-N_c}B_e\Delta{u(k+N_c-1)}
 \end{aligned}
 $$
 
