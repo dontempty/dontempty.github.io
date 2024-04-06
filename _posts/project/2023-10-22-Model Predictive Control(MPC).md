@@ -126,11 +126,12 @@ y(K+N_p|k)
 \end{bmatrix}$ 
 
 $F = \begin{bmatrix}
-C_eA_e\\
-C_eA_e^2\\
-..\\
-C_eA^{N_p}
-\end{bmatrix} \quad
+  C_eA_e\\
+  C_eA_e^2\\
+  ..\\
+  C_eA^{N_p}
+\end{bmatrix}
+\quad
 \Phi = 
 \begin{bmatrix}
 C_eB_e & 0 & ... &0\\
