@@ -16,7 +16,7 @@ use_math: true
 svd는 행렬을 3개의 행렬 $U, \Sigma, V$로 분해하는 작업을 합니다.  
 
 $A = U\Sigma V^T$  
-$= \sigma_1 \vec u_1 \vec v_1^T + \sigma_2 \vec u_2 \vec v_2^T +\cdots+ \sigma_m \vec u_m \vec v_m^T $
+$\quad = \sigma_1 \vec u_1 \vec v_1^T + \sigma_2 \vec u_2 \vec v_2^T +\cdots+ \sigma_m \vec u_m \vec v_m^T $
 
 시각적으로 표현하면 다음과 같습니다.  
 ![1](https://github.com/dontempty/tensor-decompostion/assets/155451345/2c256996-2bac-4f43-8a51-a529fe8b8d81)
