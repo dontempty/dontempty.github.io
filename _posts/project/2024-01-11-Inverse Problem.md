@@ -216,11 +216,10 @@ $\frac{\partial^2{L}}{\partial\beta\partial\gamma} =
 
 calculate eigenvalue of hessian matrix
 
-$det(H-\lambda I) = \\
-\lambda^2 
+$$det(H-\lambda I) = \lambda^2 
 - 4\lambda \sum\limits_{j=2}^{n-1}(i_{j+1}(\frac{s_{j+1}^2}{N^2}+1))
 +\sum\limits_{j=2}^{n-1}(4\frac{i_{j+1}^{2}s_{j+1}^{2}}{N^2})\sum\limits_{j=2}^{n-1}(4i_{j+1}^2)
--4(\sum\limits_{j=2}^{n-1}i_{j+1}^2s_{j+1})^2$
+-4(\sum\limits_{j=2}^{n-1}i_{j+1}^2s_{j+1})^2$$
 
 $by\; formula\; of\; roots\; \\ \lambda = 2\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}+1) 
 \pm\sqrt{4(\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}+1))^2-16\sum(\frac{i_{j+1}^2s_{j+1}^2}{N^2})\sum i_{j+1}^2+4(\sum (\frac{i_{j+1}^2s_{j+1}}{N}))^2}\\
