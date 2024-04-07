@@ -213,23 +213,23 @@ $x$: 상태변수
 
 밑에서 사용한 모델
 
-위치: $$\begin{bmatrix}
+$$위치: \begin{bmatrix}
 x \\
 y \\
 z
 \end{bmatrix} \in R^3$$ , 
-위치별 속도: $$\begin{bmatrix}
+$$위치별 속도: \begin{bmatrix}
 u \\
 v \\
 w
 \end{bmatrix} \in R^3$$ ,
-위치별 가속도 제어입력: $$\begin{bmatrix}
+$$위치별 가속도 제어입력: \begin{bmatrix}
 u_1 \\
 u_2 \\
 u_3
 \end{bmatrix} \in R^3$$
 
-상태변수 $$x = \begin{bmatrix}
+$$상태변수 x = \begin{bmatrix}
 x \\
 y \\
 z \\
