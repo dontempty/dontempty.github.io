@@ -14,7 +14,7 @@ description: >
 [MPC 란? (Model Predictive Control) 1. 기본 컨셉](https://sunggoo.tistory.com/65)
 [제어조교 〈Ctrl튜브〉](https://www.youtube.com/@ctrl3283)
 [[MPC] 모델예측제어 개요](https://pasus.tistory.com/228)
-[MPC_handout.pdf](Model%20Predictive%20Control(MPC)%203cbc523c33994289b3f872c4c46c67c3/MPC_handout.pdf)
+[MPC_handout.pdf](https://github.com/dontempty/dontempty.github.io/files/14895859/MPC_handout.pdf)
 위 4개를 보면서 공부했습니다.
 
 드론의 동역학과 같이 구현하려고 한 것입니다.
