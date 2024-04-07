@@ -54,8 +54,7 @@ $|c_n|: S_n에서\ c_n의 개수$
 예측한 cluster label의 개수가 만약 1개인 경우 정확한 예측이 일어날 수 없습니다. 그래서 batch normalization을 활용했습니다.   
 $y'_{n, i} = \frac{y_{n, i}-\mu_i}{\sqrt{\sigma^2_i} + \epsilon}$  
 하지만 이것이 cluster label의 개수의 minimum값이 늘어나는 것을 보장하지 않습니다.  
-![Uploading 3.png…]()
-
+![3](https://github.com/dontempty/dontempty.github.io/assets/155451345/f1d6e8ea-a17e-4291-ab14-739262c0cc1f)
 
 ## 2.4 Learning network by backpropagation
 
