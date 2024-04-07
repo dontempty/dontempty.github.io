@@ -20,7 +20,7 @@ description: >
 드론의 동역학과 같이 구현하려고 한 것입니다.
 [Drone ](https://www.notion.so/Drone-456301252bd947b4abfeed019cfda82a?pvs=21) 
 
-### 코드
+코드
 [https://github.com/donstrave/MPC.git](https://github.com/donstrave/MPC.git)
 
 MPC는 현재 상태에서 제어 명령을 미리 설정하고 실행해봅니다. 그런 다음 상태를 평가하고 다시 계획하기를 반복합니다.
