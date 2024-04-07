@@ -29,7 +29,7 @@ MPC는 현재 상태에서 제어 명령을 미리 설정하고 실행해봅니�
 
 t 시점에서 t+N 시점까지 정보를 가져와서 어떻게 제어를 할 것인지 계획합니다.
 
-# 2. MPC 상태공간 방정식
+## 2. MPC 상태공간 방정식
 
 상태방정식: $\dot x = Ax + Bu$
 출력방정식: $y=Cx$
@@ -41,7 +41,7 @@ DT 출력방정식: $y(k) = C_dx(k)$
 
 정확한 이유는 모르겟지만 $\Delta x$를 사용합니다.
 
-# 3. prediction of state and output
+## 3. prediction of state and output
 
 Difference state-space model
 $x(k+1)-x(k) = A_d(x(k)-x(k-1))+B_d(u(k)-u(k-1))$
@@ -133,7 +133,7 @@ $Y = Fx_a(k) + \Phi \Delta{U}$
 
 이를 이용해서 미래에 원하는 상태가 있다면 그렇게 되도록 control을 만들 수 있다는 것이다.
 
-# 4. Controller Design
+## 4. Controller Design
 
 현재 하고 있는 일의 목적은 reference가 주어졌을 경우 이를 따라가도록 하려면 어떤 control을 주어야 하는가 입니다.
 즉 reference와 예측된 미래의 상태($Y$) 차이를 minimize하는 방향으로  control을 만드는 것과 같습니다.
@@ -179,7 +179,7 @@ $\Delta{u} = \begin{bmatrix}
 I_m,\, O\, ...\, O
 \end{bmatrix}(\bar{R}+\Phi^TQ\Phi)^{-1}\Phi^TQ(R_s-Fx_a)$
 
-# 5. MPC with Constraints
+## 5. MPC with Constraints
 
 handout에서는 $\Delta{u}$에 관한 제약 조건을 주었지만 여기서는 $Y$즉 위치에 대한 제약 조건을 주었다.
 
@@ -202,9 +202,9 @@ $\frac{\partial{(J_c+J)}}{\partial{\Delta{U}}} =
 
 $\Delta{U}^* = (\Phi^TQ\Phi+2\Phi^T\Omega\Phi)^{-1}((R_s-Fx_a)^TQ\Phi+(L-Fx_a)^T\Omega\Phi +(U-Fx_a)^T\Omega\Phi)$
 
-# 6. 적용
+## 6. 적용
 
-## 1. 사용한 모델
+### 1. 사용한 모델
 
 $\dot{x} = Ax + Bu\\
 Y = Cx$ 
@@ -305,9 +305,9 @@ u_2\\
 u_3
 \end{bmatrix}$$
 
-## 2. 결과
+### 2. 결과
 
-### $N_p$ 크기 변화에 따른 변화 관찰
+#### $N_p$ 크기 변화에 따른 변화 관찰
 
 ![3](https://github.com/dontempty/dontempty.github.io/assets/155451345/30925e59-125d-4f51-aae0-791b2fe97ff5)
 
@@ -323,7 +323,7 @@ Np = 20
 
 $N_p$크기를 늘리면 참고하는 미래의 상태를 더 많아지는 것이기 때문에 성능이 더 좋아 진 것을 확인할 수 있다.
 
-### **가중치(Weight Matrix) 선택에 따른 결과 비교**
+#### **가중치(Weight Matrix) 선택에 따른 결과 비교**
 
 ![6](https://github.com/dontempty/dontempty.github.io/assets/155451345/3b20f52f-d93a-4a6f-a1a3-4becd2ea7f37)
 
@@ -341,7 +341,7 @@ R은 $\Delta{U}$에 대한 가중치로 R의 값이 높을 수록 $\Delta{U}$를
 
 Q는 $Y-R_s$에 대한 가중치로 reference와 현재 상태의 사이를 줄이는 방향으로 control을 만들게 된다. 그래서 오차가 빨리 줄어드는 것을 확인할 수 있다.
 
-### **State Variable에 대한 제약 조건 추가 및 결과 비교**
+#### **State Variable에 대한 제약 조건 추가 및 결과 비교**
 
 ![9](https://github.com/dontempty/dontempty.github.io/assets/155451345/ac3d4963-9d90-4f57-a160-27f665478b7c)
 
@@ -356,13 +356,13 @@ Q는 $Y-R_s$에 대한 가중치로 reference와 현재 상태의 사이를 줄�
 오른쪽은 옆에 있는 bound를 건드리지 않는 제약 조건을 추가한 것입니다.  
 왼쪽과 차이점은 bound가 있어서 진동이 빨리 잡히는 것을 확인할 수 있습니다.
 
-# 7. 후속 연구
+## 7. 후속 연구
 
 1. 드론의 동역학을 기반으로 한 MPC 적용
 2. N개의 드론을 동시에 control하면서 충돌을 방지하는 것
 3. 실시간 데이터를 바탕으로 장애물 회피 등을 구현하는 것
 
-# 8. 잡답
+## 8. 잡답
 
 1. 원래는 드론에 MPC를 적용하려고 했는데 nonlinearlity가 너무 강해서 실패했다. 드론에서는 body_frame 기준으로 z축에서만 힘을 받고 회전을 통해 x, y축으로 이동하는데 초기 rotation matrix가 diag[111]이라서 회전에 대한 update가 이루어지지 않았다. (z축 은 잘 맞았다.) 
 결론은 linear한 모델은 안되고 nonlinear한 방법론을 추후에 적용해서 해보겠다.
