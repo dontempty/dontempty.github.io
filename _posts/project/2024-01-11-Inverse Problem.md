@@ -187,6 +187,103 @@ initial condition: S[0]=0.98, I[0]=0.02, R[0]=0.0
 
 ## 4. Proof
 
+loss function이 convex임을 보이면 gradient가 0되는 지점이 golbal minimum임을 보일 수 있다.
+그래서 위에서 구한 $\beta, \gamma$들이 optimal 한 값임을 증명할 것이다.
+
+(1) first-order backward differences 의 loss function을 기준으로 증명합니다.
+
+다른 (2), (3)의 loss function의 경우에도 hessian matrix의 구조가 바뀌지 않기 때문에 convex임을 쉽게 증명할 수 있습니다.
+
+$Show\; that\; L\; is\; convex$ 
+
+$we\;will\; show\; that\; hessian\, matrix\; of\; L\; has\; two\; positive\; eigenvalue$  
+
+$\frac{\partial{L}}{\partial{\beta}}=\frac{4}{N^2}\beta\sum\limits_{j=2}^{n-1} i_{j}^2s_{j}^2-\frac{2}{N}\gamma \sum\limits_{j=2}^{n-1} i_{j}^2s_{j} + \frac{2}{N}\sum\limits_{j=2}^{n-1}(i_{j-1}i_{j}s_{j}-i_{j}s_{j-1}s_{j}-i_{j}^2s_{j}+i_{j}s_{j}^2) = 0
+\\
+\frac{\partial{L}}{\partial{\gamma}}=-\frac{2}{N}\beta\sum\limits_{j=2}^{n-1}i_{j}^2s_{j}+4\gamma\sum\limits_{j=2}^{n-1}i_{j}^2-2\sum\limits_{j=2}^{n-1}(i_{j-1}i_{j}-i_{j}^2-i_{j}r_{j-1}+i_{j}r_{j}) = 0$
+
+$\frac{\partial^2{L}}{\partial\beta\partial\beta} = 
+\frac{4}{N^2}\sum\limits_{j=2}^{n-1}i_{j}^2s_{j}^2$
+
+$\frac{\partial^2{L}}{\partial\gamma\partial\beta} = 
+-\frac{2}{N}\sum\limits_{j=2}^{n-1}i_{j}^2s_{j}$
+
+$\frac{\partial^2{L}}{\partial\gamma\partial\gamma} = 
+4\sum\limits_{j=2}^{n-1}i_{j}^2$
+
+$\frac{\partial^2{L}}{\partial\beta\partial\gamma} = 
+-\frac{2}{N}\sum\limits_{j=2}^{n-1}i_{j}^2s_{j}$
+
+calculate eigenvalue of hessian matrix
+
+$det(H-\lambda I) = \\
+\lambda^2 
+- 4\lambda \sum\limits_{j=2}^{n-1}(i_{j+1}(\frac{s_{j+1}^2}{N^2}+1))
++\sum\limits_{j=2}^{n-1}(4\frac{i_{j+1}^{2}s_{j+1}^{2}}{N^2})\sum\limits_{j=2}^{n-1}(4i_{j+1}^2)
+-4(\sum\limits_{j=2}^{n-1}i_{j+1}^2s_{j+1})^2$
+
+$by\; formula\; of\; roots\; \\ \lambda = 2\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}+1) 
+\pm\sqrt{4(\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}+1))^2-16\sum(\frac{i_{j+1}^2s_{j+1}^2}{N^2})\sum i_{j+1}^2+4(\sum (\frac{i_{j+1}^2s_{j+1}}{N}))^2}\\
+\, \\ 
+\;\;\,\,=2\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}+1) 
+\pm2\sqrt{(\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}+1))^2-4\sum(\frac{i_{j+1}^2s_{j+1}^2}{N^2})\sum i_{j+1}^2+(\sum (\frac{i_{j+1}^2s_{j+1}}{N}))^2}\\
+\, \\
+\;\;\,\,=2\{\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}+1) 
+\pm\sqrt{(\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}-1))^2+(\sum (\frac{i_{j+1}^2s_{j+1}}{N}))^2}\,\}$
+
+since  $\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}+1)$ and $\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}-1))^2+(\sum (\frac{i_{j+1}^2s_{j+1}}{N}))^2$ are positive
+
+$2\{\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}+1) 
++\sqrt{(\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}-1))^2+(\sum (\frac{i_{j+1}^2s_{j+1}}{N}))^2}\,\}$ is positive 
+so we will find the condition that 
+$2\{\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}+1) 
+-\sqrt{(\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}-1))^2+(\sum (\frac{i_{j+1}^2s_{j+1}}{N}))^2}\,\}$ is positive 
+
+show that  $2\{\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}+1) 
+\pm\sqrt{(\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}-1))^2+(\sum (\frac{i_{j+1}^2s_{j+1}}{N}))^2}\,\} \geq0$
+
+$let\; s_{j}^2=S_j\; and\; i_j^2=I_j$ 
+
+$(\sum I_{j+1}(\frac{S_{j+1}}{N^2}+1) )^2
+\geq
+(\sum I_{j+1}(\frac{S_{j+1}}{N^2}-1))^2+(\sum (\frac{I_{j+1}\sqrt{S_{j+1}}}{N}))^2$
+
+$\Rightarrow
+\sum\limits_{j=2}^{n-1}
+\sum\limits_{k=2}^{n-1}  
+I_{j+1}(\frac{S_{j+1}}{N^2}+1)
+I_{k+1}(\frac{S_{k+1}}{N^2}+1)
+\geq
+\sum\limits_{j=2}^{n-1}
+\sum\limits_{k=2}^{n-1}  
+I_{j+1}(\frac{S_{j+1}}{N^2}-1)
+I_{k+1}(\frac{S_{k+1}}{N^2}-1)
++
+\sum\limits_{j=2}^{n-1}
+\sum\limits_{k=2}^{n-1}  
+\frac{I_{j+1}\sqrt{S_{j+1}}}{N}
+\frac{I_{k+1}\sqrt{S_{k+1}}}{N}$
+
+$\Rightarrow
+\sum\limits_{j=2}^{n-1}
+\sum\limits_{k=2}^{n-1}  
+2\,I_{j+1}I_{k+1}
+(\frac{S_{j+1}}{N^2}+\frac{S_{k+1}}{N^2})
+\geq
+\sum\limits_{j=2}^{n-1}
+\sum\limits_{k=2}^{n-1}  
+I_{j+1}I_{k+1}
+\frac{\sqrt{S_{j+1}}}{N}
+\frac{\sqrt{S_{k+1}}}{N}$
+
+The sufficient condition for the above equation be always True is as follow
+
+$\forall j, k \in [2, 3, ..., n-1],\;\; 
+2 (S_{j+1}+S_{k+1}) \geq \sqrt{S_{j+1}}\sqrt{S_{k+1}}\\
+(0 \leq S \leq 1)$
+
+By arithmetic–geometric mean this is always true        $\blacksquare$
+
 ### 1. loss function is convex
 
 ### 2. Denominator of analytic solution bigger then 0
