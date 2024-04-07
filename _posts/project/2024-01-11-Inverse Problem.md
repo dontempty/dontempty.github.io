@@ -25,7 +25,7 @@ SIR model의 $\beta , \gamma$ 계수를 추정하는 작업을 합니다.
 S: 정상인 수
 I: 감염자 수
 R: 회복자 수
-![1](https://github.com/dontempty/dontempty.github.io/assets/155451345/8219c186-cd89-46ab-96ed-5b07a70c1c35)
+![1](https://github.com/dontempty/dontempty.github.io/assets/155451345/d53df71f-eb0b-4f46-95cb-fd4752e0a6cb)
 
 ## 2. Parameter estimation (without noise)
 explicit euler를 사용하여 얻은 데이터를 사용했습니다.  
@@ -33,7 +33,7 @@ iteration: 100
 $\beta$: 0.25  
 $\gamma$: 0.1  
 initial condition: S[0]=0.98, I[0]=0.02, R[0]=0.0  
-![1](https://github.com/dontempty/dontempty.github.io/assets/155451345/14cb0c76-6a4d-45fc-865c-a5ce94a5fa12)
+![1](https://github.com/dontempty/dontempty.github.io/assets/155451345/9f5f946c-4d65-41e0-8f75-af9936f44cdd)
 
 ## (1) Analytic solution
 간단히 말해서 미분이 0되는 지점의 $\beta , \gamma$를 찾아서 계수를 추정하는 것입니다.  
@@ -158,7 +158,7 @@ $
 
 ## (2) Physics-Informed Neural Network(PINN)
 PINN을 이용하여 계수를 추정합니다.  
-![2](https://github.com/dontempty/dontempty.github.io/assets/155451345/2cf53ec7-28f2-4c7b-a22c-fcedf66f62d6)
+![2](https://github.com/dontempty/dontempty.github.io/assets/155451345/684d18b7-82fd-4448-949c-1ce60266aae1)
 
 ## (3) solution
 
@@ -177,7 +177,8 @@ $\beta$: 0.25+np.random.randn(1)*0.1
 $\gamma$: 0.1+np.random.randn(1)*0.1  
 initial condition: S[0]=0.98, I[0]=0.02, R[0]=0.0  
 
-![3](https://github.com/dontempty/dontempty.github.io/assets/155451345/3d8852a4-bafb-4741-b1ea-b4c0143dc2d3)
+![3](https://github.com/dontempty/dontempty.github.io/assets/155451345/12235f42-deb0-48ce-8b30-9c7ccfb648e6)
+
 
 |    |beta|gamma|
 |---|---|---|
