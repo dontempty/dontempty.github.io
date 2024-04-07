@@ -213,34 +213,34 @@ $x$: 상태변수
 
 밑에서 사용한 모델
 
-위치: $\begin{bmatrix}
+위치: $$\begin{bmatrix}
 x \\
 y \\
 z
-\end{bmatrix} \in R^3$ , 
-위치별 속도: $\begin{bmatrix}
+\end{bmatrix} \in R^3$$ , 
+위치별 속도: $$\begin{bmatrix}
 u \\
 v \\
 w
-\end{bmatrix} \in R^3$ ,
-위치별 가속도 제어입력: $\begin{bmatrix}
+\end{bmatrix} \in R^3$$ ,
+위치별 가속도 제어입력: $$\begin{bmatrix}
 u_1 \\
 u_2 \\
 u_3
-\end{bmatrix} \in R^3$
+\end{bmatrix} \in R^3$$
 
-상태변수 $x = \begin{bmatrix}
+상태변수 $$x = \begin{bmatrix}
 x \\
 y \\
 z \\
 u \\
 v \\
 w
-\end{bmatrix}$
+\end{bmatrix}$$
 
 ODE system
 
-$\dot{\begin{bmatrix}
+$$\dot{\begin{bmatrix}
 x \\
 y \\
 z \\
@@ -263,11 +263,11 @@ w
 u_1 \\
 u_2 \\
 u_3
-\end{bmatrix}$
+\end{bmatrix}$$
 
 상태방정식 $\dot{x} = Ax+Bu$
 
-$\dot{\begin{bmatrix}
+$$\dot{\begin{bmatrix}
 x \\
 y \\
 z \\
@@ -303,7 +303,7 @@ w
 u_1\\
 u_2\\
 u_3
-\end{bmatrix}$
+\end{bmatrix}$$
 
 ## 2. 결과
 
