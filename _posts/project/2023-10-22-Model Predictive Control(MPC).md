@@ -12,41 +12,31 @@ description: >
 # Model Predictive Control(MPC)
 
 [MPC 란? (Model Predictive Control) 1. 기본 컨셉](https://sunggoo.tistory.com/65)
-
 [제어조교 〈Ctrl튜브〉](https://www.youtube.com/@ctrl3283)
-
 [[MPC] 모델예측제어 개요](https://pasus.tistory.com/228)
-
 [MPC_handout.pdf](Model%20Predictive%20Control(MPC)%203cbc523c33994289b3f872c4c46c67c3/MPC_handout.pdf)
-
 위 4개를 보면서 공부했습니다.
 
-Notation은 위 내용을 혼용하여 사용하겠습니다.
-
 드론의 동역학과 같이 구현하려고 한 것입니다.
-
 [Drone ](https://www.notion.so/Drone-456301252bd947b4abfeed019cfda82a?pvs=21) 
 
 ### 코드
-
 [https://github.com/donstrave/MPC.git](https://github.com/donstrave/MPC.git)
 
 MPC는 현재 상태에서 제어 명령을 미리 설정하고 실행해봅니다. 그런 다음 상태를 평가하고 다시 계획하기를 반복합니다.
 
-![Untitled](Model%20Predictive%20Control(MPC)%203cbc523c33994289b3f872c4c46c67c3/Untitled.png)
+![1](https://github.com/dontempty/dontempty.github.io/assets/155451345/2527f32c-0dfd-4dba-8f9b-4168f76cf080)
 
 t 시점에서 t+N 시점까지 정보를 가져와서 어떻게 제어를 할 것인지 계획합니다.
 
 # 2. MPC 상태공간 방정식
 
 상태방정식: $\dot x = Ax + Bu$
-
 출력방정식: $y=Cx$
 
 MPC는 Discrete-time에서 구현한 모델이기 때문에 위 방정식을 discrete하게 만들어 줘야합니다.
 
 DT 상태방정식: $x(k+1) = A_dx(k) + B_du(k)$
-
 DT 출력방정식: $y(k) = C_dx(k)$
 
 정확한 이유는 모르겟지만 $\Delta x$를 사용합니다.
@@ -54,20 +44,16 @@ DT 출력방정식: $y(k) = C_dx(k)$
 # 3. prediction of state and output
 
 Difference state-space model
-
 $x(k+1)-x(k) = A_d(x(k)-x(k-1))+B_d(u(k)-u(k-1))$
-
 $\Rightarrow \Delta x(k+1) = A_d \Delta x(k)+B_d \Delta u(k)$
 
 Output
-
 $y(k+1)-y(k) = C_d\Delta x(k+1)=C_dA_d\Delta x(k)+C_dB_d\Delta u(k)$
-
 $\Rightarrow y(k+1) = y(k)+C_dA_d\Delta x(k) + C_dB_d\Delta u(k)$
 
 이를 행렬 형태로 변환하여 쓰면 다음과 같습니다.
 
-$x_a(k) = \begin{bmatrix} \Delta{x(k)} \\ y(k) \end{bmatrix}$
+$$x_a(k) = \begin{bmatrix} \Delta{x(k)} \\ y(k) \end{bmatrix}$$
 
 $$\begin{bmatrix} \Delta{x(k+1)} \\ y(k+1) \end{bmatrix} = \begin{bmatrix} \ A_d \quad \ 0 \\ C_dA_d \ 1 \end{bmatrix} \begin{bmatrix} \ \Delta{x(k)} \\ y(k)\end{bmatrix}+\begin{bmatrix} B_d \\ C_dB_d\end{bmatrix} \Delta{u(k)}$$
 
@@ -80,11 +66,8 @@ $$y(k) = \begin{bmatrix} 0 \quad I \end{bmatrix} \begin{bmatrix} \Delta{x(k+1)} 
 $x_a(k+1) = A_ex_a(k)+B_e \Delta{u(k)}$
 
 $y_a(k) = C_ex_a(k)$
-
 $N_p$ : 예측하고 싶은 미래의 출력 수
-
 $N_c$: 제어 입력의 수
-
 $(N_c < N_p)$
 
 미래에 행하게 될 제어값을 다음과 정리합니다.
@@ -112,9 +95,9 @@ $$
 
 출력 변수 $y(k)$에 대해서도 미래 시점의 관측 값을 다음과 같이 정리할 수 있습니다.
 
-$y(k) = C_ex(k)$
+$y(k) = C_ex(k)$  
 
-$y(k+N_p|k) = C_e A_e^{N_p}x_a(k) + C_e A_e^{N_p-1}B_e\Delta{u(k)} + ... + C_e A_e^{N_p-N_c}B_e\Delta{u(k+N_c-1)}$
+$y(k+N_p|k) = C_{e} A_e^{N_p}x_a(k) + C_{e} A_e^{N_p-1}B_e\Delta{u(k)} + ... + C_{e} A_e^{N_p-N_c}B_e\Delta{u(k+N_c-1)}$  
 
 $$Y = \begin{bmatrix}
 y(k+1|k)\\
@@ -145,8 +128,7 @@ C_eA_e^{N_p-1}B_e & ... & & C_eA_e^{N_p-N_c}B_e
 
 $Y = Fx_a(k) + \Phi \Delta{U}$
 
-위 내용에서 설명하는 것은 현재 상태 $x(k)$만 알고 있더라도 미래에 어떻게 움직일 것인지 알 수 있다. 
-
+위 내용에서 설명하는 것은 현재 상태 $x(k)$만 알고 있더라도 미래에 어떻게 움직일 것인지 알 수 있습니다.
 블로그의 말을 빌리자면 현재 상태를 알고 있으면 $N_c$개의 입력을 잘 만들어서 $N_p$개의 출력 즉 미래의 상태를 확인 할 수 있다는 것이다.
 
 이를 이용해서 미래에 원하는 상태가 있다면 그렇게 되도록 control을 만들 수 있다는 것이다.
@@ -154,7 +136,6 @@ $Y = Fx_a(k) + \Phi \Delta{U}$
 # 4. Controller Design
 
 현재 하고 있는 일의 목적은 reference가 주어졌을 경우 이를 따라가도록 하려면 어떤 control을 주어야 하는가 입니다.
-
 즉 reference와 예측된 미래의 상태($Y$) 차이를 minimize하는 방향으로  control을 만드는 것과 같습니다.
 
 $R_s = reference$
@@ -217,7 +198,7 @@ $\frac{\partial{(J_c+J)}}{\partial{\Delta{U}}} =
 -(R_s-Fx_a-\Phi\Delta{U})^TQ\Phi+\Delta{U}^T\bar{R} \\
 -(L-Fx_a-\Phi\Delta{U})^T\Omega\Phi + (Fx_a+\Phi\Delta{U}-U)^T\Omega\Phi$
 
-![KakaoTalk_20231114_190745967.jpg](Model%20Predictive%20Control(MPC)%203cbc523c33994289b3f872c4c46c67c3/KakaoTalk_20231114_190745967.jpg)
+![2](https://github.com/dontempty/dontempty.github.io/assets/155451345/03915b2d-7d68-4b53-b0bc-2292786fc67b)
 
 $\Delta{U}^* = (\Phi^TQ\Phi+2\Phi^T\Omega\Phi)^{-1}((R_s-Fx_a)^TQ\Phi+(L-Fx_a)^T\Omega\Phi +(U-Fx_a)^T\Omega\Phi)$
 
@@ -233,79 +214,81 @@ $x$: 상태변수
 밑에서 사용한 모델
 
 위치: $\begin{bmatrix}
-x\\
-y\\
+x \\
+y \\
 z
-\end{bmatrix} \in \R^3$ , 위치별 속도: $\begin{bmatrix}
-u\\
-v\\
+\end{bmatrix} \in R^3$ , 
+위치별 속도: $\begin{bmatrix}
+u \\
+v \\
 w
-\end{bmatrix} \in \R^3$ , 위치별 가속도 제어입력: $\begin{bmatrix}
-u_1\\
-u_2\\
+\end{bmatrix} \in R^3$ ,
+위치별 가속도 제어입력: $\begin{bmatrix}
+u_1 \\
+u_2 \\
 u_3
-\end{bmatrix} \in \R^3$
+\end{bmatrix} \in R^3$
 
 상태변수 $x = \begin{bmatrix}
-x\\
-y\\
-z\\
-u\\
-v\\
+x \\
+y \\
+z \\
+u \\
+v \\
 w
 \end{bmatrix}$
 
 ODE system
 
 $\dot{\begin{bmatrix}
-x\\
-y\\
-z\\
-u\\
-v\\
+x \\
+y \\
+z \\
+u \\
+v \\
 w
 \end{bmatrix}} = 
 \begin{bmatrix}
-x\\
-y\\
-z\\
-u\\
-v\\
+x \\
+y \\
+z \\
+u \\
+v \\
 w
 \end{bmatrix} +
 \begin{bmatrix}
-0\\
-0\\
-0\\
-u_1\\
-u_2\\
+0 \\
+0 \\
+0 \\
+u_1 \\
+u_2 \\
 u_3
 \end{bmatrix}$
 
 상태방정식 $\dot{x} = Ax+Bu$
 
 $\dot{\begin{bmatrix}
-x\\
-y\\
-z\\
-u\\
-v\\
+x \\
+y \\
+z \\
+u \\
+v \\
 w
 \end{bmatrix}} = 
 \begin{bmatrix}
-0 & 0 & 0 & 1 & 0 & 0\\
-0 & 0 & 0 & 0 & 1 & 0\\
-0 & 0 & 0 & 0 & 0 & 1\\
-0 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
 0 & 0 & 0 & 0 & 0 & 0
 \end{bmatrix}
 \begin{bmatrix}
-x\\
-y\\
-z\\
-u\\
-v\\
+x \\
+y \\
+z \\
+u \\
+v \\
 w
 \end{bmatrix} + 
 \begin{bmatrix}
@@ -326,15 +309,15 @@ u_3
 
 ### $N_p$ 크기 변화에 따른 변화 관찰
 
-![reference](Model%20Predictive%20Control(MPC)%203cbc523c33994289b3f872c4c46c67c3/Untitled%201.png)
+![3](https://github.com/dontempty/dontempty.github.io/assets/155451345/30925e59-125d-4f51-aae0-791b2fe97ff5)
 
 reference
 
-![Np = 10](Model%20Predictive%20Control(MPC)%203cbc523c33994289b3f872c4c46c67c3/Untitled%202.png)
+![4](https://github.com/dontempty/dontempty.github.io/assets/155451345/ba88985a-0958-4cac-a867-d46b4812628e)
 
 Np = 10
 
-![Np = 20](Model%20Predictive%20Control(MPC)%203cbc523c33994289b3f872c4c46c67c3/Untitled%203.png)
+![5](https://github.com/dontempty/dontempty.github.io/assets/155451345/446d534c-d5d3-4d9b-8601-e12f139dcead)
 
 Np = 20
 
@@ -342,15 +325,15 @@ $N_p$크기를 늘리면 참고하는 미래의 상태를 더 많아지는 것�
 
 ### **가중치(Weight Matrix) 선택에 따른 결과 비교**
 
-![R=50, Q=120](Model%20Predictive%20Control(MPC)%203cbc523c33994289b3f872c4c46c67c3/Untitled%204.png)
+![6](https://github.com/dontempty/dontempty.github.io/assets/155451345/3b20f52f-d93a-4a6f-a1a3-4becd2ea7f37)
 
 R=50, Q=120
 
-![R=25, Q=120](Model%20Predictive%20Control(MPC)%203cbc523c33994289b3f872c4c46c67c3/Untitled%205.png)
+![7](https://github.com/dontempty/dontempty.github.io/assets/155451345/64a17281-1ee6-4f56-a0ce-d5f2becbbb89)
 
 R=25, Q=120
 
-![R=25, Q=360](Model%20Predictive%20Control(MPC)%203cbc523c33994289b3f872c4c46c67c3/Untitled%206.png)
+![8](https://github.com/dontempty/dontempty.github.io/assets/155451345/0b3029ce-9064-42e8-9b2d-36ad4b3292cd)
 
 R=25, Q=360
 
@@ -360,11 +343,11 @@ Q는 $Y-R_s$에 대한 가중치로 reference와 현재 상태의 사이를 줄�
 
 ### **State Variable에 대한 제약 조건 추가 및 결과 비교**
 
-![제약 조건 없음](Model%20Predictive%20Control(MPC)%203cbc523c33994289b3f872c4c46c67c3/Untitled%207.png)
+![9](https://github.com/dontempty/dontempty.github.io/assets/155451345/ac3d4963-9d90-4f57-a160-27f665478b7c)
 
 제약 조건 없음
 
-![제약 조건 있음](Model%20Predictive%20Control(MPC)%203cbc523c33994289b3f872c4c46c67c3/Untitled%208.png)
+![10](https://github.com/dontempty/dontempty.github.io/assets/155451345/c50b7bc7-1742-4d57-843f-5fc7f7330135)
 
 제약 조건 있음
 
