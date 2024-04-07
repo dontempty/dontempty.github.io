@@ -276,11 +276,10 @@ I_{j+1}I_{k+1}
 
 The sufficient condition for the above equation be always True is as follow
 
-$\forall j, k \in [2, 3, ..., n-1],\;\; 
-2 (S_{j+1}+S_{k+1}) \geq \sqrt{S_{j+1}}\sqrt{S_{k+1}}\\
+$\forall j, k \in [2, 3, ..., n-1], \ 2 (S_{j+1}+S_{k+1}) \geq \sqrt{S_{j+1}}\sqrt{S_{k+1}} \\
 (0 \leq S \leq 1)$
 
-By arithmetic–geometric mean this is always true        $\blacksquare$
+By arithmetic–geometric mean this is always true  $\blacksquare$
 
 ### 1. loss function is convex
 
