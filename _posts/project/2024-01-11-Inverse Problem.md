@@ -218,14 +218,16 @@ calculate eigenvalue of hessian matrix
 
 $$det(H-\lambda I) = \lambda^2 - 4\lambda \sum\limits_{j=2}^{n-1}(i_{j+1}(\frac{s_{j+1}^2}{N^2}+1))+\sum\limits_{j=2}^{n-1}(4\frac{i_{j+1}^{2}s_{j+1}^{2}}{N^2})\sum\limits_{j=2}^{n-1}(4i_{j+1}^2)-4(\sum\limits_{j=2}^{n-1}i_{j+1}^2s_{j+1})^2$$
 
-$by\; formula\; of\; roots\; \\ \lambda = 2\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}+1) 
+$$\begin{align}
+by\ formula\ of\ roots\ \\  
+\lambda & = 2\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}+1) 
 \pm\sqrt{4(\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}+1))^2-16\sum(\frac{i_{j+1}^2s_{j+1}^2}{N^2})\sum i_{j+1}^2+4(\sum (\frac{i_{j+1}^2s_{j+1}}{N}))^2}\\
-\, \\ 
-\;\;\,\,=2\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}+1) 
+& =2\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}+1) 
 \pm2\sqrt{(\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}+1))^2-4\sum(\frac{i_{j+1}^2s_{j+1}^2}{N^2})\sum i_{j+1}^2+(\sum (\frac{i_{j+1}^2s_{j+1}}{N}))^2}\\
-\, \\
-\;\;\,\,=2\{\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}+1) 
-\pm\sqrt{(\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}-1))^2+(\sum (\frac{i_{j+1}^2s_{j+1}}{N}))^2}\,\}$
+\,
+& =2\{\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}+1) 
+\pm\sqrt{(\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}-1))^2+(\sum (\frac{i_{j+1}^2s_{j+1}}{N}))^2}\,\}
+\end{align}$$
 
 since  $\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}+1)$ and $\sum i_{j+1}^2(\frac{s_{j+1}^2}{N^2}-1))^2+(\sum (\frac{i_{j+1}^2s_{j+1}}{N}))^2$ are positive
 
@@ -244,7 +246,7 @@ $(\sum I_{j+1}(\frac{S_{j+1}}{N^2}+1) )^2
 \geq
 (\sum I_{j+1}(\frac{S_{j+1}}{N^2}-1))^2+(\sum (\frac{I_{j+1}\sqrt{S_{j+1}}}{N}))^2$
 
-$\Rightarrow
+$$\Rightarrow
 \sum\limits_{j=2}^{n-1}
 \sum\limits_{k=2}^{n-1}  
 I_{j+1}(\frac{S_{j+1}}{N^2}+1)
@@ -258,9 +260,9 @@ I_{k+1}(\frac{S_{k+1}}{N^2}-1)
 \sum\limits_{j=2}^{n-1}
 \sum\limits_{k=2}^{n-1}  
 \frac{I_{j+1}\sqrt{S_{j+1}}}{N}
-\frac{I_{k+1}\sqrt{S_{k+1}}}{N}$
+\frac{I_{k+1}\sqrt{S_{k+1}}}{N}$$
 
-$\Rightarrow
+$$\Rightarrow
 \sum\limits_{j=2}^{n-1}
 \sum\limits_{k=2}^{n-1}  
 2\,I_{j+1}I_{k+1}
@@ -270,7 +272,7 @@ $\Rightarrow
 \sum\limits_{k=2}^{n-1}  
 I_{j+1}I_{k+1}
 \frac{\sqrt{S_{j+1}}}{N}
-\frac{\sqrt{S_{k+1}}}{N}$
+\frac{\sqrt{S_{k+1}}}{N}$$
 
 The sufficient condition for the above equation be always True is as follow
 
