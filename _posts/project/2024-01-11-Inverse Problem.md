@@ -109,8 +109,7 @@ $\gamma = \frac{\begin{matrix}
 (i_{j-1}i_{j}s_{j}-i_{j}s_{j-1}s_{j}-i_{j}^2s_{j}+i_{j}s_{j}^2)
 \end{matrix}}{\begin{matrix}
 \frac{16}{N^2}\sum\limits_{j=2}^{n-1}i_{j}^2s_{j}^2\cdot\sum\limits_{j=2}^{n-1}i_{j}^2-\frac{4}{N^2}(\sum\limits_{j=2}^{n-1}i_{j}^2s_{j})^2
-\end{matrix}}
-$
+\end{matrix}}$
 
 ### 3. second-order centered difference
 
@@ -135,8 +134,7 @@ i_{j}^2\\
 \end{matrix}}
 {\begin{matrix}
 \frac{16}{N^2}\sum\limits_{j=2}^{n-1}i_{j}^2s_{j}^2\cdot\sum\limits_{j=2}^{n-1}i_{j}^2-\frac{4}{N^2}(\sum\limits_{j=2}^{n-1}i_{j}^2s_{j})^2
-\end{matrix}}
-$
+\end{matrix}}$
 
 $\gamma =
 \frac{\begin{matrix} 
@@ -153,8 +151,7 @@ i_{j}^2s_{j}\cdot
 \end{matrix}}
 {\begin{matrix}
 \frac{16}{N^2}\sum\limits_{j=2}^{n-1}i_{j}^2s_{j}^2\cdot\sum\limits_{j=2}^{n-1}i_{j}^2-\frac{4}{N^2}(\sum\limits_{j=2}^{n-1}i_{j}^2s_{j})^2
-\end{matrix}}
-$
+\end{matrix}}$
 
 ## (2) Physics-Informed Neural Network(PINN)
 PINN을 이용하여 계수를 추정합니다.  
