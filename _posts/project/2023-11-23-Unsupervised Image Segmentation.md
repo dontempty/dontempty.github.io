@@ -20,6 +20,8 @@ Fully unsupervised learng에 대해서 다루고 있습니다.
 
 CNN을 기반으로 만든 모델입니다.
 전체적인 아이디어는 이미지를  clustering 해서 image segmentation을 진행합니다.
+ ![1](https://github.com/dontempty/dontempty.github.io/assets/155451345/d9b7ed30-5f08-4ae6-a3d5-7139a889a4ed) | ![2](https://github.com/dontempty/dontempty.github.io/assets/155451345/77597dab-cc61-4933-9fdd-df7ea60bac30)
+---|---|  
 
 ## Let 
 $x_{n}$: p dimention feature (RGB 3차원 벡터)
