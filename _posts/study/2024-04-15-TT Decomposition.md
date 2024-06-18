@@ -1,3 +1,15 @@
+---
+title: TT Decompostion
+author: dontempty
+date: 2024-04-15 20:30:00 +0900
+categories: [study, Tensor Decomposition]
+tags: [TT Decompostion]
+use_math: true
+description: >
+    Tensor Train Decomposition
+---
+
+
 # TENSOR-TRAIN DECOMPOSITION
 
 ## CP Decomposition(canonical decomposition)
