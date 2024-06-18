@@ -34,7 +34,7 @@ $$A(i_1, i_2, ..., i_d) = \sum\limits_{\alpha_{0}, ..., \alpha_{d}} G_{1}(\alpha
 boundary conditions : $r_0$ = $r_d$ = 1  
 TT ranks $r_k$ : $\alpha_{k}$ 의 원소 개수
 
-(image1)
+![1](https://github.com/dontempty/dontempty.github.io/assets/155451345/36bd4f8a-b31f-436a-a559-cc43f065c1b4)
 
 #### Main goal
 
@@ -137,7 +137,8 @@ Check : Since the set of matrices of rank not higher then $r_k$ is closed set
 간단하게 설명하자면 continunous function을 잘 만들어서 closed set의 preimage가 우리가 원하는 set이기 때문에 closed set임을 보일 수 있습니다.
 
 ### TT-SVD algorithm
-(image2)  
+![2](https://github.com/dontempty/dontempty.github.io/assets/155451345/ccc4148f-45e9-47b2-95d0-1b8dbfc5f150)
+
 간단히 설명하자면 tensor를 unfolding하여 SVD를 통해 core tensor를 추출합니다.
 
 ### 3. Rounding in TT-format
