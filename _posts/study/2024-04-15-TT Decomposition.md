@@ -25,9 +25,7 @@ $G_k(i_k)$ is an $r_{k-1} \times r_{k}$ matrix
 ## Tensor Train Decomposition
 
 ### 1. Introduction
-$$A(i_1, i_2, ..., i_d) = G_{1}(i_1)G_{2}(i_2)...G_{d}(i_d)\tag{1.2}$$  
-
-$G_k(i_k)$ is an $r_{k-1} \times n_{k} \times r_{k}$ array  
+$$A(i_1, i_2, ..., i_d) = G_{1}(i_1)G_{2}(i_2)...G_{d}(i_d)\tag{1.2}$$ 
 
 $$A(i_1, i_2, ..., i_d) = \sum\limits_{\alpha_{0}, ..., \alpha_{d}} G_{1}(\alpha_0, i_1, \alpha_1)G_{2}(\alpha_1, i_2, \alpha_2)...G_{d}(\alpha_{d-1}, i_d, \alpha_d)\tag{1.3}$$  
 boundary conditions : $r_0$ = $r_d$ = 1  
