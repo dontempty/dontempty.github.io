@@ -28,6 +28,9 @@ $G_k(i_k)$ is an $r_{k-1} \times r_{k}$ matrix
 $$A(i_1, i_2, ..., i_d) = G_{1}(i_1)G_{2}(i_2)...G_{d}(i_d)\tag{1.2}$$ 
 
 $$A(i_1, i_2, ..., i_d) = \sum\limits_{\alpha_{0}, ..., \alpha_{d}} G_{1}(\alpha_0, i_1, \alpha_1)G_{2}(\alpha_1, i_2, \alpha_2)...G_{d}(\alpha_{d-1}, i_d, \alpha_d)\tag{1.3}$$  
+$G_k(i_k)$ is an $r_{k-1} \times n_{k} \times r_{k}$ array  
+$G_{k}(\alpha_{k-1}, n_{k}, \alpha_{k}) = G_{k}(i_k)_{\alpha_{k-1}, \alpha_{k}}$  
+
 boundary conditions : $r_0$ = $r_d$ = 1  
 TT ranks $r_k$ : $\alpha_{k}$ 의 원소 개수
 
